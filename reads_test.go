@@ -1,28 +1,26 @@
-package tdata_test
+package tdata
 
 import (
 	"fmt"
-
-	"github.com/sn3d/tdata"
 )
 
 func ExampleReadStr() {
-	tdata.Setup()
+	InitTestdata()
 
-	helloworld := tdata.ReadStr("folder/subfolder/helloworld.txt")
+	helloworld := ReadStr("folder/subfolder/helloworld.txt")
 	fmt.Println(helloworld)
 	// Output: Testdata
 }
 
 func ExampleReadYAML() {
-	tdata.Setup()
+	InitTestdata()
 
 	book := struct {
 		Title string `yaml:"title"`
 		Pages int    `yaml:"pages"`
 	}{}
 
-	tdata.ReadYAML("folder/subfolder/book.yaml", &book)
+	ReadYAML("folder/subfolder/book.yaml", &book)
 
 	fmt.Println(book.Title)
 	fmt.Println(book.Pages)
@@ -32,14 +30,14 @@ func ExampleReadYAML() {
 }
 
 func ExampleReadJSON() {
-	tdata.Setup()
+	InitTestdata()
 
 	book := struct {
 		Title string `json:"title"`
 		Pages int    `json:"pages"`
 	}{}
 
-	tdata.ReadJSON("folder/subfolder/book.json", &book)
+	ReadJSON("folder/subfolder/book.json", &book)
 
 	fmt.Println(book.Title)
 	fmt.Println(book.Pages)

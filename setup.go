@@ -17,7 +17,7 @@ var tempDir string
 // directory
 //
 // This function ensure idempotency of tests
-func Setup() {
+func InitTestdata() {
 	var err error
 	if tempDir == "" {
 		if tempDir, err = os.MkdirTemp("", "testdata-*"); err != nil {
