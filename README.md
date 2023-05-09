@@ -1,6 +1,6 @@
 # T-Data - testdata library
-[![Go Report Card](https://goreportcard.com/badge/github.com/sn3d/testdata)](https://goreportcard.com/report/github.com/sn3d/testdata)
-[![codebeat badge](https://codebeat.co/badges/7cad42bc-1ddf-4b7f-ba42-542e848cffba)](https://codebeat.co/projects/github-com-sn3d-testdata-main)
+[![Go Report Card](https://goreportcard.com/badge/github.com/sn3d/tdata)](https://goreportcard.com/report/github.com/sn3d/tdata)
+[![codebeat badge](https://codebeat.co/badges/22212eab-ac10-4984-913f-a9a33a2a7d2d)](https://codebeat.co/projects/github-com-sn3d-tdata-main)
 [![Go Reference](https://pkg.go.dev/badge/github.com/sn3d/tdata.svg)](https://pkg.go.dev/github.com/sn3d/tdata)
 
 This little Go library is designed to support `testdata` manipulation in 
