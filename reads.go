@@ -2,7 +2,7 @@ package tdata
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"os"
 	"strings"
 
 	yaml "gopkg.in/yaml.v3"
@@ -12,7 +12,7 @@ import (
 // it doesn't exits, then this function gives you empty byte array
 func Read(file string) []byte {
 	fileParts := strings.Split(file, "/")
-	content, err := ioutil.ReadFile(Abs(fileParts...))
+	content, err := os.ReadFile(Abs(fileParts...))
 	if err != nil {
 		return []byte{}
 	} else {
