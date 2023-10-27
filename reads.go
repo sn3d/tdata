@@ -1,41 +1,33 @@
 package tdata
 
-import (
-	"encoding/json"
-	"os"
-	"strings"
-
-	yaml "gopkg.in/yaml.v3"
-)
-
 // returns you file body as []byte. If file cannot be read or
 // it doesn't exits, then this function gives you empty byte array
+//
+// Deprecated: use Testdata.Read() instead
 func Read(file string) []byte {
-	fileParts := strings.Split(file, "/")
-	content, err := os.ReadFile(Abs(fileParts...))
-	if err != nil {
-		return []byte{}
-	} else {
-		return content
-	}
+	return globalTestdata.Read(file)
 }
 
 // returns you file body as string. If file cannot be read or
 // it doesn't exits, then this function gives you empty string
+//
+// Deprecated: use Testdata.ReadStr() instead
 func ReadStr(file string) string {
-	return string(Read(file))
+	return globalTestdata.ReadStr(file)
 }
 
 // function load YAML file and fill the data into
 // given out
+//
+// Deprecated: use Testdata.ReadYAML() instead
 func ReadYAML(file string, out any) {
-	data := Read(file)
-	yaml.Unmarshal(data, out)
+	globalTestdata.ReadYAML(file, out)
 }
 
-// function load YAML file and fill the data into
+// function load JSON file and fill the data into
 // given out
+//
+// Deprecated: use Testdata.ReadJSON() instead
 func ReadJSON(file string, out any) {
-	data := Read(file)
-	json.Unmarshal(data, out)
+	globalTestdata.ReadJSON(file, out)
 }

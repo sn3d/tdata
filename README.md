@@ -28,19 +28,19 @@ and save it.
 
 ```go
 
-import . "github.com/sn3d/tdata"
+import testdata "github.com/sn3d/tdata"
 
 func Test_HelloWorld(t *testing.T) {
-   InitTestdata()
+   testdata.Init(t)
 
-   content, err := ioutil.ReadFile(Abs("helloworld.txt")) 
+   content, err := ioutil.ReadFile(testdata.Abs("helloworld.txt")) 
    if err != nil {
       t.FailNow()
    }
 
    content := fmt.Sprintf("%s hello world\n", content)
 
-   err := ioutil.WriteFile(Abs("helloworld.txt"), []byte(content), 0644)
+   err := ioutil.WriteFile(testdata.Abs("helloworld.txt"), []byte(content), 0644)
    if err != nil {
       t.FailNow()
    }
@@ -61,12 +61,12 @@ with file, functions will give you no data.
 Example how to read file as string:
 
 ```go
-import . "github.com/sn3d/tdata"
+import testdata "github.com/sn3d/tdata"
 
 func Test_ReadString(t *testing.T) {
-   InitTestdata()
+   testadata.Init(t)
 
-   var text string = ReadStr("helloworld.txt")
+   var text string = testdata.ReadStr("helloworld.txt")
 
    ...
 }
@@ -75,7 +75,7 @@ func Test_ReadString(t *testing.T) {
 Example how to read YAML file into structure:
 
 ```go
-import . "github.com/sn3d/tdata"
+import testdata "github.com/sn3d/tdata"
 
 type Book struct {
    Title string `yaml:"title"`
@@ -83,10 +83,10 @@ type Book struct {
 }
 
 func Test_ReadString(t *testing.T) {
-   InitTestdata()
+    testdata.Init(t)
 
-	book := new(Book)
-	ReadYAML("folder/subfolder/book.yaml", book)
+    book := new(Book)
+	testdata.ReadYAML("folder/subfolder/book.yaml", book)
 
    ...
 }

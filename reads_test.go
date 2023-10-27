@@ -5,7 +5,7 @@ import (
 )
 
 func ExampleReadStr() {
-	InitTestdata()
+	Init(nil)
 
 	helloworld := ReadStr("folder/subfolder/helloworld.txt")
 	fmt.Println(helloworld)
@@ -13,7 +13,7 @@ func ExampleReadStr() {
 }
 
 func ExampleReadYAML() {
-	InitTestdata()
+	Init(nil)
 
 	book := struct {
 		Title string `yaml:"title"`
@@ -30,7 +30,7 @@ func ExampleReadYAML() {
 }
 
 func ExampleReadJSON() {
-	InitTestdata()
+	Init(nil)
 
 	book := struct {
 		Title string `json:"title"`
